@@ -1,0 +1,20 @@
+{
+    "returnData":"1",
+    "returnDetails":{
+        "deviceId":"192.168.0.1",
+        "interfaceName":"KZ985",
+        "vlanOccupied":[
+            "VLAN10",
+            "VLAN11",
+            "VLAN12",
+            "VLAN13"
+        ],
+        "vlanFree":[
+            "VLAN20",
+            "VLAN31",
+            "VLAN42",
+            "VLAN53"
+        ]
+    },
+    "returnObj":null
+}

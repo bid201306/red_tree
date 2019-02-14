@@ -1,0 +1,13 @@
+table.bsgrid{
+	
+}
+table.bsgrid tbody{
+	display:block;
+	overflow-y:hidden;
+}
+
+table.bsgrid thead, 
+table.bsgrid tbody tr {
+    display:table;
+    width:100%;
+}

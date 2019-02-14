@@ -1,0 +1,146 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>websocket test</title>
+<!-- 浏览器图标 -->
+<link rel="icon" href="/redpro/image/favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="/redpro/image/favicon.ico" type="image/x-icon" />
+<link rel="bookmark" href="/redpro/image/favicon.ico" type="image/x-icon" />
+
+<link href="/redpro/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src='/redpro/js/jquery-3.1.1.min.js'></script>
+<script src="/redpro/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<div style="text-algin: center; margin-top: 20px">
+		<div style="margin: 0 20px 0 80px">
+
+			<form class="form-horizontal" id="redisForm" method="post">
+				<div class="form-group">
+					<div class="col-sm-3">
+						<button type="button" class="btn btn-default"
+							onclick="connect()">创建websocket</button>
+					</div>
+					<div class="col-sm-3">
+						<button type="button" class="btn btn-default"
+							onclick="closeIt()">关闭websocket</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-1">
+						<label for="name">本地内容</label>
+					</div>
+					<div class="col-sm-6">
+						<textarea class="form-control" rows="6" id="msg"></textarea>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-1">
+						<label for="name">服务器消息</label>
+					</div>
+					<div class="col-sm-6">
+						<textarea class="form-control" rows="6" id="result"></textarea>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<button type="button" class="btn btn-default"
+							onclick="clientSendMsg()">发送到服务器</button>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-1">
+						<label for="name">服务器广播</label>
+					</div>
+					<div class="col-sm-6">
+						<textarea class="form-control" rows="6" id="server"></textarea>
+
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-10">
+						<button type="button" class="btn btn-default"
+							onclick="serverSendMsg()">服务器发送到浏览器</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+<script type="text/javascript">
+	var websocket;
+	connect();
+	
+
+	function connect(){
+		// 首先判断是否 支持 WebSocket 
+		if ('WebSocket' in window) {
+			websocket = new WebSocket(
+					"ws://127.0.0.1:2018/redpro/testHandler?userId=hyz" + parseInt(Math.random() * 3));
+		} else if ('MozWebSocket' in window) {
+			websocket = new MozWebSocket(
+					"ws://127.0.0.1:2018/redpro/testHandler?userId=hyz" + parseInt(Math.random() * 3));
+		} else {
+			websocket = new SockJS(
+					"http://127.0.0.1:2018/redpro/socketJs/testHandler?userId=hyz" + parseInt(Math.random() * 3));
+		}
+		
+		// 打开连接时 
+		websocket.onopen = function(evnt) {
+			console.log(" websocket.onopen ");
+		};
+
+		// 收到消息时 
+		websocket.onmessage = function(evnt) {
+			$('#result').val(evnt.data);
+		};
+
+		websocket.onerror = function(evnt) {
+			console.log(" websocket.onerror ");
+		};
+
+		websocket.onclose = function(evnt) {
+			$('#result').val('WebSocket连接已关闭');
+			console.log(" websocket.onclose ");
+		};
+
+	}
+	function closeIt(){
+		if(websocket == undefined){
+			$('#result').val('WebSocket未初始化');
+			return;
+		}
+		websocket.close();
+		$('#result').val('WebSocket连接已关闭');
+
+	}
+	
+	function clientSendMsg() {
+		//客户端主动发消息 
+		if(websocket == undefined){
+			$('#result').val('WebSocket未连接');
+			return;
+		}
+		if(websocket.readyState == 3){
+			$('#result').val('WebSocket连接已关闭');
+			return;
+		}
+		websocket.send($('#msg').val());
+	}
+
+	function serverSendMsg() {
+		var msg = $('#server').val();
+		$.ajax({
+			type : 'post',
+			url : "/redpro/send?msg=" + msg,
+			success : function(data) {
+				console.log(data);
+			},
+			error : function(XMLHttpRequest, textStatus, errorThrown) {
+				$('#server').val(XMLHttpRequest.responseText);
+			}
+		});
+	}
+</script>
+</html>

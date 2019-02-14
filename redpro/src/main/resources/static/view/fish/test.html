@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<% include("/static/view/modules/public_head.html"){} %>
+<link rel="stylesheet"
+	href="/redpro/fish/fish-desktop/css/fish-desktop-default.css">
+<script src='/redpro/fish/fish-desktop/js/fish-desktop-all.js'></script>
+
+
+<!-- 模块化加载入口 -->
+<title>fish test</title>
+</head>
+<body>
+	<p>控件初始化</p>
+<div id="demo_12">
+        <div class="input-group search-group" data-toggle="searchbar"></div>
+        <div id="gridId"></div>
+    </div>
+	<div id="demo_11">
+		<div class="form-group">
+			<div class="input-group popedit">
+				<input class="form-control" type="text" placeholder="Enter a value"
+					id="inputDemo" data-url="#demodialog">
+			</div>
+		</div>
+		<div>
+			<button id="btnEnable" type="button" class="btn btn-default">Enable</button>
+			<button id="btnDisable" type="button" class="btn btn-default">Disable</button>
+			<button id="getValue" type="button" class="btn btn-default">取值</button>
+			<button id="setValue" type="button" class="btn btn-default">赋值</button>
+			<button id="clearValue" type="button" class="btn btn-default">清空</button>
+		</div>
+
+		<div>不显示x图标</div>
+		<div class="form-group">
+			<div class="input-group popedit">
+				<input class="form-control" type="text" placeholder="Enter a value"
+					id="inputDemo2" data-url="#demodialog">
+			</div>
+		</div>
+
+
+	</div>
+
+	<div id="demodialog" class="ui-dialog">
+		<div class="modal-header">
+			<h4 class="modal-title">Modal title</h4>
+		</div>
+		<div class="modal-body">
+			<p>Running "clean:examples" (clean) task Cleaning
+				examples/accordion/index.html...OK Cleaning
+				examples/affix/index.html...OK</p>
+		</div>
+		<div class="modal-footer">
+		<div id="logcontent">
+			<button type="button" class="btn btn-primary" id="save-button">Save
+				changes</button>
+			<button type="button" class="btn btn-default" id="cancel-button">Cancel</button>
+		</div></div>
+	</div>
+	<div id="treeDemo"></div>
+
+	<div id="elem"></div>
+
+
+
+	<p>数据渲染</p>
+	<div id="app-1"></div>
+	<p>条件判断</p>
+	<div id="app-2"></div>
+	<p>循环</p>
+	<div id="app-3"></div>
+	<p>DOM 交互</p>
+	<div id="app-4"></div>
+	<p>widget控件定义</p>
+	<div id="app-5"></div>
+
+
+</body>
+
+<script type="text/javascript">
+
+
+</script>
+<script src='/redpro/js/test/data.js'></script>
+<script src='/redpro/js/test/test.js'></script>
+
+</html>

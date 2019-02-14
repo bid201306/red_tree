@@ -1,0 +1,475 @@
+.content-wrapper > .row > div > .main-content-tabs > .main-tabs-panel, .right-side > .row > div > .main-content-tabs > .main-tabs-panel, .main-footer > .row > div > .main-content-tabs > .main-tabs-panel {
+    top: 33px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+.modal-body {
+    position: relative;
+    padding: 1px 21px;
+}
+
+.iom-cloud-searchView .tab-wrapper .tab-item {
+    height: 28px;
+    line-height: 28px;
+    padding: 0px 7px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    color: #A7A7A7;
+}
+
+.iom-cloud-searchView .search-wrapper .input-group-lg > .form-control, .input-group-lg > .input-group-addon, .input-group-lg > .input-group-btn > .btn {
+    height: 34px;
+    padding: 2px 10px;
+
+}
+
+.iom-cloud-searchView .search-wrapper .search-btn {
+    line-height: 23px;
+    font-size: 10px;
+    border-radius: 0px !important;
+    top: 0px;
+    right: -10px;
+    border: none;
+}
+
+.iom-cloud-searchView .search-wrapper .search-btn span {
+    font-size: 16px;
+}
+
+.iom-cloud-searchView {
+    padding-left: 10%;
+    width: 90%;
+    margin-top: 5px;
+}
+
+.iom-cloud-searchView .tab-wrapper > .tab-item.selector {
+    background-color: #0099CB;
+    color: #FFF;
+    border-radius: 0px !important;
+}
+
+.iom-cloud-searchView .search-wrapper .search-btn-wrapper {
+    cursor: pointer;
+    width: 100%;
+}
+
+.iom-cloud-searchView .search-wrapper .search-btn-wrapper > span {
+    background: #0199CB;
+    color: white;
+}
+
+.iom-cloud-searchView .search-wrapper .search-btn-wrapper > span span {
+    padding-left: 10px;
+}
+
+.iom-cloud-searchView input {
+    box-shadow: none;
+}
+
+.iom-cloud-searchView .filter {
+    margin-top: 15px;
+}
+
+.iom-cloud-searchView .filter .input-group-addon {
+    font-size: 12px;
+}
+
+.iom-cloud-searchView .filter #iom-cloud-searchView-moreBtn {
+    cursor: pointer;
+}
+
+.iom-cloud-searchView .filter label {
+    padding-right: 0px;
+    padding-top: 2px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.iom-cloud-searchView .moreFilter {
+    margin-top: 5px;
+}
+
+.iom-cloud-searchView .moreFilter .form-group label {
+    padding-right: 0px;
+    padding-top: 2px;
+    font-weight: normal;
+    font-style: normal;
+}
+
+.iom-cloud-table-panel .table-name {
+   /*  border-left: 2px #55abe8 solid !important; */
+   border-left: 2px #1b8fe5 solid !important;
+    margin-left: 0px;
+    padding-left: 6px;
+    margin-right: 22px;
+    color: #333;
+    line-height: 12px;
+    font-size: 14px;
+}
+
+.iom-cloud-table-panel .btn-group > .btn:first-child {
+    border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.iom-cloud-table-panel .btn-group > .btn:last-child {
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-right: none;
+
+}
+
+.iom-cloud-table-panel .btn-group > .btn {
+    border-radius: 0px !important;
+    color: #ffffff;
+    background-color: #33a5dc;
+    border-color: transparent;
+    border-right: 2px solid #e5f7ff;
+}
+
+.iom-cloud-table-panel .btn-group > .btn:hover,
+.iom-cloud-table-panel .btn-group > .btn:focus,
+.iom-cloud-table-panel .btn-group > .btn:active {
+    color: #ffffff;
+    background-color: #0183c1;
+    border-color: rgba(0, 0, 0, 0);
+}
+
+.iom-cloud-panel {
+    padding: 5px 4px 2px 4px;
+    background: white;
+    margin: 4px -16px;
+    border-radius: 2px;
+    transition: box-shadow 0.5s;
+}
+
+.iom-cloud-panel:hover {
+    -moz-box-shadow: 0px 0px 4px 0px #888888; /* 老的 Firefox */
+    box-shadow: 0px 0px 4px 0px #888888;
+}
+
+.alert {
+    padding: 8px 20px;
+    margin-bottom: 8px;
+    border-radius: 3px;
+}
+
+.alert-dismissable .close, .alert-dismissible .close {
+    right: -14px;
+}
+
+.datetimepicker thead tr:first-child {
+    background-color: #0e7ccb;
+    color: #fff;
+
+}
+
+.iom-cloud-panel .ui-jqgrid-view .ui-jqgrid-hdiv .ui-jqgrid-htable .ui-th-column {
+    height: 27px;
+}
+
+.iom-cloud-panel .ui-jqgrid-view .ui-jqgrid-hdiv {
+    color: #2d2d2d;
+}
+
+.nicescroll-cursors {
+    background-color: rgb(0, 148, 255) !important;
+}
+
+.panel-body {
+    height: 90%;
+}
+
+.panel-body .fixed-polyline {
+    width: 100%;
+    height: 100%;
+}
+
+.panel-heading .refresh-btn {
+    width: 60px;
+    float: right;
+    font-size: 14px;
+    text-indent: 20px;
+    background-color: #F5F5F5;
+    background-repeat: no-repeat;
+    background-position: left 15px;
+    cursor: pointer;
+}
+
+.panel-heading:hover .refresh-btn {
+    display: block
+}
+
+.panel-heading .refresh-btn {
+    display: none
+}
+
+.iomc_hp_widget_monthly_order_count_wrapper {
+    height: 100%;
+    background-color: #FFF;
+}
+
+.iomc_hp_widget_daily_order_count_wrapper {
+    height: 100%;
+    background-color: #FFF;
+}
+
+.btn-link {
+    cursor: pointer;
+}
+
+body.fullscreen .content-wrapper {
+    padding-left: 0px;
+}
+
+.pagination > .disabled > span, .pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus, .pagination > .disabled > a,
+.pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    border: none;
+    color: #c7c7c7;
+    cursor: not-allowed;
+}
+
+.pagination > li > a, .pagination > li > span,
+.pagination .total-page {
+    border: none;
+}
+
+.pagination > li > a {
+    color: #33a5dc;
+    background: none;
+}
+
+.ui-jqgrid-pager .ui-pg-control .pagination > li > a {
+    margin: 0 0px 0 0;
+}
+
+.ui-jqgrid {
+    border-radius: 2px;
+}
+
+.iom-cloud-panel .ui-jqgrid-view .ui-jqgrid-hdiv {
+    border-radius: 2px 2px 0px 0px
+}
+
+.ui-jqgrid-view .ui-jqgrid-bdiv .ui-jqgrid-btable tr.jqgrow td,
+.ui-jqgrid-view .ui-jqgrid-hdiv .ui-jqgrid-htable th[id*=cb] {
+    border-bottom: 0px
+}
+
+.ui-jqgrid-view .ui-jqgrid-hdiv .ui-jqgrid-htable .ui-th-column {
+    border-right: 1px solid #e5e5e5;
+}
+.ui-jqgrid td{
+    height: 27px;
+    font-size: 12px;
+}
+.ui-jqgrid-view .ui-jqgrid-bdiv .ui-jqgrid-btable tr.ui-state-highlight {
+    background-color: #3f9ee2;
+    color: white;
+}
+.ui-tabs .ui-tabs-nav li a {
+     float: left;
+     text-decoration: none;
+     padding: 3px 11px;
+     cursor: pointer;
+     outline: 0;
+     color: #646464;
+     font-weight: 100;
+ }
+.ui-dialog{
+    overflow: auto;
+}
+.modal-message{
+    word-wrap: break-word;
+}
+.ui-pg-control{
+    font-size: 10px;
+}
+.iom-cloud-page-body{
+    padding: 0px 22px;
+}
+.iom-cloud-searchView .tab-item.selector{
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+}
+.iom-cloud-searchView .search-btn-wrapper .form-control{
+    border-bottom-left-radius: 2px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.ui-jqgrid-view .ui-jqgrid-bdiv .ui-jqgrid-btable tr:hover{
+    background-color: #daf5fd;
+}
+.ui-jqgrid-view .ui-jqgrid-bdiv .ui-jqgrid-btable tr.ui-state-highlight:hover{
+    background-color: #65cdec;
+}
+
+.jqgrow:nth-child(2n+1) {
+    background-color: #f8fbff;
+}
+.main-header div > .navbar .navbar-header{
+    min-width: 500px;
+}
+.ui-tabs.main-content-tabs > .ui-tabs-nav li{
+    padding-bottom: 5px;
+    margin-top: 5px;
+}
+.ui-tabs.main-content-tabs > .ui-tabs-nav li.ui-tabs-active a{
+    padding: 5px 12px;
+}
+.ui-tabs.main-content-tabs > .ui-tabs-nav li a{
+    padding: 0px 12px;
+}
+.ui-tabs.main-content-tabs > .ui-tabs-nav li.ui-tabs-active{
+    height: 32px;
+}
+.first-sidebar-treemenu .addWorkbenchBtn{
+    display: none !important;
+    padding: 3px 5px !important;
+    position: absolute;
+    right: 0;
+    top: 0px;
+    cursor: pointer;
+}
+
+.first-sidebar-treemenu  .not-first-menu-li:hover > .addWorkbenchBtn{
+    display: block !important;
+}
+
+.first-sidebar-treemenu .not-first-menu-li{
+    position: relative;
+}
+.workbench-menu-item a{
+    padding: 5px 10px !important;
+}
+.workbench-menu-item a:hover,.workbench-menu-item:hover{
+    background: #0e7ccb !important;
+    color: white  !important;
+}
+.workbench-menu-item:hover fa{
+    color: white  !important;
+}
+
+.workbench-menu-item{
+    position: relative;
+    border-right: none;
+    padding-right: 30px;
+}
+.workbench-menu-del{
+    position: absolute;
+    top: 0px;
+    right: 0;
+    padding: 5px !important;
+    display: none !important;
+    background: none !important;
+}
+
+.workbench-menu-item:hover .workbench-menu-del{
+    display: block !important;
+}
+.ui-tabs.main-content-tabs > .ui-tabs-nav li.ui-tabs-active .ui-tabs-close{
+    margin-top: 6px;
+    margin-left: 0px;
+    margin-right: 12px;;
+}
+
+table.iom-table>thead>tr>th, .table-bordered>thead>tr>td{
+    border-bottom-width: 2px;
+    background-color: #e1f3ff;
+    font-size: 10px;
+    padding: 6px;
+    font-weight: 400;
+    color: black;
+}
+.iom-table>thead>tr>th, .iom-table>tbody>tr>th,
+.iom-table>tfoot>tr>th, .iom-table>thead>tr>td,
+.iom-table>tbody>tr>td, .iom-table>tfoot>tr>td{
+    padding: 4px;
+}
+.iom-table>thead>tr>th, .iom-table>tbody>tr>th, .iom-table>tfoot>tr>th, .iom-table>thead>tr>td,
+.iom-table>tbody>tr>td, .iom-table>tfoot>tr>td{
+    border: 1px solid #f5f5f5;
+}
+.iom-detail-table td{
+    border: none !important;
+
+}
+.iom-detail-table tr:not(:last-child){
+    border-bottom: 1px solid #ececec !important;
+}
+.iom-detail-table tr>td:nth-child(odd){
+    text-align: right;
+    border-right: 1px solid #f5f5f5 !important;
+    vertical-align: middle;
+}
+.iom-detail-table tr>td:nth-child(even){
+    color: #0083e2;
+}
+.iom-detail-table textarea{
+    border: none;
+}
+
+
+.iom-detail-table{
+    border: none;
+    border-bottom: 1px solid #ececec;
+}
+.iom-grid-state{
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius:5px ;
+    float: right;
+    margin: 3px 10px 0 0;
+    -moz-margin-start: -20px;
+    -moz-margin-end: 10px;
+}
+.ztree li span.button{
+	width:18px !important;
+}
+.ztree li span.button.root_open,.ztree li span.button.roots_open{
+	margin: 3px 3px -3px 0;
+	background: url('/oss-web/IOM-ORCHESTRATION-WEB/businessDesign/css/images/tree.png') no-repeat -91px 0px;
+}
+.ztree li span.button.root_close,.ztree li span.button.roots_close{
+   margin: 3px 3px -3px 0; 
+	background: url('/oss-web/IOM-ORCHESTRATION-WEB/businessDesign/css/images/tree.png') no-repeat -72px 0px;
+}
+.ztree li span.button.root_open,.ztree li span.button.center_open{
+	margin: 3px 3px -3px 0;
+	background: url('/oss-web/IOM-ORCHESTRATION-WEB/businessDesign/css/images/tree.png') no-repeat -91px 0px;
+}
+.ztree li span.button.root_close,.ztree li span.button.center_close{
+   margin: 3px 3px -3px 0; 
+	background: url('/oss-web/IOM-ORCHESTRATION-WEB/businessDesign/css/images/tree.png') no-repeat -72px 0px;
+}
+.ztree li span.button.root_open,.ztree li span.button.bottom_open{
+	margin: 3px 3px -3px 0;
+	background: url('/oss-web/IOM-ORCHESTRATION-WEB/businessDesign/css/images/tree.png') no-repeat -91px 0px;
+}
+.ztree li span.button.root_close,.ztree li span.button.bottom_close{
+   margin: 3px 3px -3px 0; 
+	background: url('/oss-web/IOM-ORCHESTRATION-WEB/businessDesign/css/images/tree.png') no-repeat -72px 0px;
+}
+.ztree li span.button.cs-tree_ico_open {
+	margin: 3px 3px -3px 0;
+	background: url('/oss-web/IOM-ORCHESTRATION-WEB/businessDesign/css/images/tree.png') no-repeat -110px -16px;
+}
+
+.ztree li span.button.cs-tree_ico_close {
+	margin: 3px 3px -3px 0;
+	background: url('/oss-web/IOM-ORCHESTRATION-WEB/businessDesign/css/images/tree.png') no-repeat -110px 0px;
+}
+
+.ztree li span.button.cs-tree_ico_docu {
+	margin: 3px 3px -3px 0;
+	background: url('/oss-web/IOM-ORCHESTRATION-WEB/businessDesign/css/images/tree.png') no-repeat -110px -31px;
+}
+.ztree li .button.ico_docu{
+	margin-bottom: -3px;
+}	

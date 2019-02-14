@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>接口平台JSON测试</title>
+</head>
+<body>
+
+<form name="myform">	
+	<center>
+	<br>数据类型:
+	<select id="selTestType" style="width:80px">
+		<option value="1">JSON</option>
+	</select>
+	<input type="text" id="edtURL" style="width:500px" value="http://127.0.0.1:42001/CRMService" />
+	<input type=button id="btnTest" value=" 测 试 " onclick="invokeTest()" />
+	<!--<input type=button id="btnClearInput" value="清空输入" onclick="clearInput()" />-->
+	<input type=button id="btnClearOutput" value="清空输出" onclick="clearOutput()" />
+	<br><br>
+	<textarea id="inputTextArea" style="font-family:Courier New;font-size:9pt;" rows="36" cols="82" wrap="off"></textarea>
+	<textarea id="outputTextArea" style="font-family:Courier New;font-size:9pt;background-color:#DFE0F0";" 
+		rows="36" cols="82" wrap="off" readonly></textarea>
+	<br>
+	</center>
+</form>
+<script laguage="JavaScript" type="text/javascript">
+
+var JsonUtil = {  
+    //定义换行符   
+    n: "\n",  
+    //定义制表符   
+    t: "    ",  
+    //转换String   
+    convertToString: function(obj) {  
+        return JsonUtil.__writeObj(obj, 1);  
+    },  
+    //写对象   
+    __writeObj: function(obj //对象   
+    , level //层次（基数为1）   
+    , isInArray) { //此对象是否在一个集合内   
+        //如果为空，直接输出null   
+        if (obj == null) {  
+            return "null";  
+        }  
+        //为普通类型，直接输出值   
+        if (obj.constructor == Number || obj.constructor == Date || obj.constructor == String || obj.constructor == Boolean) {  
+            var v = obj.toString();  
+            var tab = isInArray ? JsonUtil.__repeatStr(JsonUtil.t, level - 1) : "";  
+            if (obj.constructor == String || obj.constructor == Date) {  
+                //时间格式化只是单纯输出字符串，而不是Date对象   
+                return tab + ("\"" + v + "\"");  
+            }  
+            else if (obj.constructor == Boolean) {  
+                return tab + v.toLowerCase();  
+            }  
+            else {  
+                return tab + (v);  
+            }  
+        }  
+        //写Json对象，缓存字符串   
+        var currentObjStrings = [];  
+        //遍历属性   
+        for (var name in obj) {  
+            var temp = [];  
+            //格式化Tab   
+            var paddingTab = JsonUtil.__repeatStr(JsonUtil.t, level);  
+            temp.push(paddingTab);  
+            //写出属性名   
+            temp.push('"' + name + '" : ');  
+            var val = obj[name];  
+            if (val == null) {  
+                temp.push("null");  
+            }  
+            else {  
+                var c = val.constructor;  
+                if (c == Array) { //如果为集合，循环内部对象   
+                    //temp.push(JsonUtil.n + paddingTab + "[" + JsonUtil.n); 
+                    temp.push("[" + JsonUtil.n);
+                    var levelUp = level + 2; //层级+2   
+                    var tempArrValue = []; //集合元素相关字符串缓存片段   
+                    for (var i = 0; i < val.length; i++) {  
+                        //递归写对象   
+                        tempArrValue.push(JsonUtil.__writeObj(val[i], levelUp, true));  
+                    }  
+                    temp.push(tempArrValue.join("," + JsonUtil.n));  
+                    temp.push(JsonUtil.n + paddingTab + "]");  
+                }  
+                else if (c == Function) {  
+                    temp.push("[Function]");  
+                }  
+                else {  
+                    //递归写对象   
+                    temp.push(JsonUtil.__writeObj(val, level + 1));  
+                }  
+            }  
+            //加入当前对象“属性”字符串   
+            currentObjStrings.push(temp.join(""));  
+        } 
+        
+        var msg = (!isInArray) ?"" :JsonUtil.__repeatStr(JsonUtil.t, level - 1);
+        return msg + "{" + JsonUtil.n //加层次Tab格式化 
+        	+ currentObjStrings.join("," + JsonUtil.n) //串联所有属性值   
+        	+ JsonUtil.n + JsonUtil.__repeatStr(JsonUtil.t, level - 1) + "}"; //封闭对象  
+        //return (level > 1 && !isInArray ? "": "") //如果Json对象是内部，就要换行格式化  
+        //+ JsonUtil.__repeatStr(JsonUtil.t, level - 1) + "{" + JsonUtil.n //加层次Tab格式化 
+        //+ currentObjStrings.join("," + JsonUtil.n) //串联所有属性值   
+        //+ JsonUtil.n + JsonUtil.__repeatStr(JsonUtil.t, level - 1) + "}"; //封闭对象   
+    },  
+    __isArray: function(obj) {  
+        if (obj) {  
+            return obj.constructor == Array;  
+        }  
+        return false;  
+    },  
+    __repeatStr: function(str, times) {  
+        var newStr = [];  
+        if (times > 0) {  
+            for (var i = 0; i < times; i++) {  
+                newStr.push(str);  
+            }  
+        }  
+        return newStr.join("");  
+    }  
+}; 
+
+function invokeTest()
+{	
+	clearOutput();
+	var theUrl = document.getElementById("edtURL").value;
+	var inputData = document.getElementById("inputTextArea").value;
+	// 格式化输入
+	var retObj = formatJsonStr(inputData);
+	if (!retObj.result) {
+		alert("输入报文语法错误！");
+		return;
+	}
+	
+	inputData = retObj.fmtStr;
+	document.getElementById("inputTextArea").value = inputData;
+	
+	// 调用服务
+	getDataUsingAjax(theUrl, inputData, funcOnGetData);
+}
+
+function clearInput()
+{
+	document.getElementById("inputTextArea").value="";
+}
+
+function clearOutput()
+{
+	document.getElementById("outputTextArea").value="";
+}
+
+function funcOnGetData(theUrl, returnData)
+{
+	var retObj = formatJsonStr(returnData);
+	document.getElementById("outputTextArea").value = retObj.fmtStr;
+	//document.getElementById("outputTextArea").value = returnData; 
+}
+
+function formatJsonStr(str)
+{
+	var retObj = new Object();
+	var xx = strToJson(str);
+	
+	if (xx == null) {
+		retObj.result = false;
+		retObj.fmtStr = str;
+		return retObj;
+	}
+	
+	retObj.result = true;
+	retObj.fmtStr = JsonUtil.convertToString(xx);
+	return retObj;
+}
+
+function strToJson(str){
+	try {
+	    var json = eval('(' + str + ')');   
+		return json; 
+	} catch(e) {
+		return null;
+	} 
+}
+
+function getDataUsingAjax(theUrl, sendData, dataProcessFunc)
+{
+	var xmlHttp = createXmlHttp();
+	try {
+     	xmlHttp.open("POST", theUrl, true);  
+    } catch(e1) {
+     	return;
+    }
+    xmlHttp.setRequestHeader("Content-Type","application/x-www-form-urlencoded;charset=UTF8");
+    xmlHttp.onreadystatechange = function() {
+		if (xmlHttp.readyState == 4) {
+			if ((xmlHttp.status == 200) || (xmlHttp.status == 0)) {
+				var returnData = xmlHttp.responseText;
+				dataProcessFunc(theUrl, returnData);
+				return true;
+			} else {
+				//alert('b');
+				var returnData = "";
+				if (xmlHttp.status == 12029) {
+					returnData = "访问 " + theUrl + " 时，可能存在网络不通。";
+				} else {
+					returnData = "访问 " + theUrl + " 时，服务器返回错误代码: " + xmlHttp.status;
+				}
+				returnData += "\n" + xmlHttp.responseText;
+				dataProcessFunc(theUrl, returnData);
+				return false;
+			}
+	    }
+    }; 
+    xmlHttp.send(sendData);
+}
+
+function createXmlHttp(){
+	var xmlHttp;
+	try {
+	    xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+	} catch(e) {    
+	    try { 
+	    	xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");  
+	    } catch(e1) {  
+	    	xmlHttp = new XMLHttpRequest();
+	    }
+	}
+	return xmlHttp;
+}
+
+</script>
+</body>
+</html>

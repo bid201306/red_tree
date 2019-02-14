@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>jQuery实现的Mac样式消息提示框DEMO演示</title>
+
+
+<link href="/redpro/bootstrap/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/redpro/plugins/alert/css/demo.css">
+<link rel="stylesheet" href="/redpro/plugins/alert/css/style.css">
+<script src="/redpro/plugins/alert/js/hullabaloo.js"></script>
+
+
+<link href="/redpro/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src='/redpro/js/jquery-3.1.1.min.js'></script>
+<script src="/redpro/bootstrap/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+	<div class="row content">
+		<div class="col-md-6">
+			<h3>插件特点:</h3>
+			<ul>
+				<li>三个显示位置: right, center or left.</li>
+				<li>六种情景模式: success, info, warning, danger, light, dark.</li>
+			</ul>
+		</div>
+		<div class="col-md-6">
+			<h3>示例:</h3>
+
+			<button class="btn btn-success m-2" onclick="$.hulla.send('这是一则成功信息', 'success')">Success</button>
+			<button class="btn btn-info m-2" onclick="$.hulla.send('这是一则信息', 'info')">Info</button>
+			<button class="btn btn-warning m-2" onclick="$.hulla.send('这是一则警告信息!', 'warning')">Warning</button>
+			<button class="btn btn-danger m-2" onclick="$.hulla.send('这是一则危险信息', 'danger')">Danger</button>
+			<button class="btn btn-light m-2" onclick="$.hulla.send('这是一则信息（亮色主题）', 'light')">Light</button>
+			<button class="btn btn-dark m-2" onclick="$.hulla.send('这是一则信息（暗色主题）', 'dark')">Dark</button>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$.hulla = new hullabaloo();
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jquery Ui Test</title>
+<!-- 引入JQuery -->
+  <script type="text/javascript" src="../jquery-easyui/jquery.min.js"></script>
+  <!-- 引入EasyUI -->
+  <script type="text/javascript" src="../jquery-easyui/jquery.easyui.min.js"></script>
+  <!-- 引入EasyUI的中文国际化js，让EasyUI支持中文 -->
+  <script type="text/javascript" src="../jquery-easyui/locale/easyui-lang-zh_CN.js"></script>
+  <!-- 引入EasyUI的样式文件-->
+  <link rel="stylesheet" href="../jquery-easyui/themes/default/easyui.css" type="text/css"/>
+  <!-- 引入EasyUI的图标样式文件-->
+  <link rel="stylesheet" href="../jquery-easyui/themes/icon.css" type="text/css"/>
+</head>
+<body class="easyui-layout">  
+	<h2>Editable Tree</h2>
+	<p>Click the node to begin edit, press enter key to stop edit or esc key to cancel edit.</p>
+	<div style="margin:20px 0;"></div>
+	<div class="easyui-panel" style="padding:5px">
+		<ul id="tt" class="easyui-tree" data-options="
+				url: './tree/tree_data1.json',
+				method: 'get',
+				animate: true,
+				onClick: function(node){
+					$(this).tree('beginEdit',node.target);
+				},
+				formatter:function(node){
+						var s = node.text;
+						if (node.children){
+							s += '&nbsp;<span style=\'color:blue\'>(' + node.children.length + ')</span>';
+						}
+						return s;
+					}
+			"></ul>
+	</div> 
+  </body>  
+</html>

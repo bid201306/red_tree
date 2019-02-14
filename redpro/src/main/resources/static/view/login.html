@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<!-- 引入功能html模块 -->
+<%
+include("modules/public_head.html"){}
+%>
+<%
+include("modules/login_head.html"){}
+%>
+
+<title>Login On Red Tree</title>
+</head>
+<body>
+	<div class="body"></div>
+	<div class="grad"></div>
+	<div class="header" >
+		<div class="yz_magic" go="/redpro/image/lm.jpg" tips="Welcome to Red Tree">
+			Red<span>Tree</span>
+		</div>
+	</div>
+	<br>
+	<div class="login">
+		<input type="text" placeholder="用户名" name="user" id="user"><br> 
+		<input type="password" placeholder="密码" name="password" id="password"><br> 
+		<div style="margin:10px 0">
+                    <input type="checkbox" id="checkRememberMe" >
+                    <label for="checkRememberMe" style="cursor:pointer">记住我</label>
+        </div>
+		<input type="button" value="登录"  onclick="login()">
+	</div>
+</body>
+<script src='/redpro/js/prefixfree.min.js'></script>
+<script src='/redpro/js/login.js'></script>
+<script type="text/javascript" color="0, 0, 0" opacity='0.3' zIndex="-2" count="200" src="/redpro/plugins/canvas/js/canvas-nest.js"></script>
+
+</html>

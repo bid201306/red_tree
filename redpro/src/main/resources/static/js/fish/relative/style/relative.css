@@ -1,0 +1,150 @@
+	
+
+	div#atomObjectCatalogMenu {
+	position:absolute; 
+	visibility:hidden; 
+	top:0; 
+	background-color: white;
+	text-align: left;
+	padding: 2px;
+	border:1px solid #ececec;
+	
+	}
+	div#atomObjectCatalogMenu ul {
+		margin: 0;
+		padding: 0;
+		line-height:28px;
+	}
+	div#atomObjectCatalogMenu ul li{
+		margin: 0;
+		padding: 0 15px;
+		cursor: pointer;
+		list-style: none outside none;
+		background-color: white; 
+		position: relative; 
+		z-index: 0;
+		/* display:inline-block; */
+	}
+	div#atomObjectCatalogMenu ul li:hover{ 
+        /* border: 1px solid blue;  */
+        background-color: #ececec;
+        color:#108BED;
+        z-index: 1; 
+    }
+    .panel-body{
+	padding:0px;
+}
+
+
+#professionArrange-atomObject-container{
+	height: 100%;
+   	padding:0;
+   	margin:0;
+   	background-color: #ffffff;
+   	font-size: 1vw;
+}
+#professionArrange-atomObject-divLeft{
+	height: 100%;
+}
+.panel-body{
+	padding:0px;
+}
+.panel-heading{
+	padding-left:0;
+	margin-left:0;
+}
+.iom-cloud-table-panel{
+	padding:0;
+	margin:0;
+}
+.titleDiv{
+	padding:0;
+	margin:0;
+}
+#professionArrange-atomObject-divLeft .panel{
+		margin:0 0 0 -13px; /*上右下左*/
+		height: 96.5%;
+	}
+#professionArrange-atomObject-divRight{
+		height: 100%;
+	}
+
+ .scrollable{
+    	overflow: auto;
+    }
+    
+    /* #professionArrange-atomObject-add-icon{
+    	background:url(/oss-web/iom-orchestration-web/businessDesign/css/images/combo_arrow.png) no-repeat top right;
+    	background-position:right 5px;
+    } */
+    div#professionArrange-atomObject-iconDiv < #professionArrange-serviceObject-addAtomObj-body{
+	    border:1px solid #DCDCDC;
+	    background-color: #caeeff;
+		position:absolute; 
+		/* display:none; */
+		visibility:hidden; 
+		top:0; 
+		text-align: left;
+		padding: 2px;
+		z-index: 1;
+		height:100px;
+		overflow: auto;
+	}
+	div#professionArrange-atomObject-iconDiv ul {
+		margin: 0;
+		padding: 0;
+		line-height:35px;
+	}
+	div#professionArrange-atomObject-iconDiv ul li{
+		margin: 1px 0;
+		padding: 0 5px;
+		cursor: pointer;
+		list-style: none outside none;
+		margin: 0 0 -1px -1px;
+		position: relative; 
+		/* display:inline-block; */
+		width:25%;float:left;
+		text-align:center;
+	}
+	/* div#professionArrange-atomObject-iconDiv ul li:hover{ 
+        background-color: #fef3c7;
+    } */
+    #professionArrange-atomObject-iconDiv{
+    }
+    #professionArrange-atomObject-add-showIon{
+  		cursor: pointer; 
+    	background-repeat: no-repeat;
+  		position: absolute;
+  		right:2%;
+    	top:25%;
+    	/* background-position:right -2000px;; */
+    	/* left:45px;
+    	top:3px; */
+    }
+    #professionArrange-serviceObject-addAtomObj-body{
+    	overflow: auto;
+    }
+    
+    .left-all{
+		margin : 5% 1% 0% 2.4% !important;
+	}
+
+	.right-firsh{
+		margin:  1.7% 1.5% 1.1% 0.3% !important;
+	}
+
+	.right-second{
+		margin: 0.7% 1.5% 0% 0.3% !important;
+
+	}
+
+	.right-thrid{
+		margin: 1.5% 1% 0% 0.5% !important;
+	}
+    
+    #activityReturnParam .row{
+        margin: 15px 20px;
+    }
+    .split_line{
+   margin:30px;background: #352929;height:20px
+    }

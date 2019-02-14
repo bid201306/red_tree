@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Red Tree Project Test</title>
+</head>
+<body>
+	<p>${now},it's work</p>
+	<p>${words}</p>
+	<table>
+		<tr>
+			<td>id</td>
+			<td>name</td>
+		</tr>
+
+		<% for(user in userList){ %>
+		<tr>
+			<td>${user['ID']}</td>
+			<td>${user['NICKNAME']}</td>
+		</tr>
+		<% } %>
+	</table>
+	拥有权限valhalla: ${shiro.hasPermission('valhalla')}
+	<br>
+	拥有权限welcome: ${shiro.hasPermission('welcome')}
+	<br>
+	拥有角色admin: 	${shiro.hasAnyRole('admin')}
+	<br>
+	<a href='./system/index'>进入后台管理</a>
+	
+
+</body>
+</html>

@@ -1,0 +1,22 @@
+
+<PM_CUST>
+	<CUST_CODE>default</CUST_CODE>
+	<CUST_NAME>
+		<xsl:value-of select="OrderInfo_item/trans_CustName"/>
+	</CUST_NAME>
+	<CUST_LINK_MAN>	
+	      <xsl:value-of select="OrderInfo_item/trans_CustLinkMan"/>
+	</CUST_LINK_MAN>
+	<CUST_TELPHONE>
+		<xsl:value-of select="OrderInfo_item/trans_CustTelphone"/>
+	</CUST_TELPHONE>
+	<ADDRESS>
+		<xsl:value-of select="OrderInfo_item/trans_CustAddr"/>
+	</ADDRESS>
+	<EMAIL>
+		<xsl:value-of select="OrderInfo_item/trans_CustEmail"/>
+	</EMAIL>
+	<CUST_GROUP>default</CUST_GROUP>
+	<AREA_ID>50135</AREA_ID>
+	<CUST_SHORT_NAME>default</CUST_SHORT_NAME>
+</PM_CUST>
